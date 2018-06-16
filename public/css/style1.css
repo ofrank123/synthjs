@@ -4,7 +4,7 @@ body {
 
 * {
     font-family: 'Oswald', sans-serif;
-  }
+}
 
 h1 {
     font-family: 'Oswald', sans-serif;
@@ -23,13 +23,17 @@ h1 {
 }
 
 .container {
-  position: relative;
-  display: inline;
+    position: relative;
+    display: inline;
 }
 
 .overlay {
-  position: fixed;
-  top: 290;
-  left: 137;
-  transform: rotate(50deg);
+    top: 290;
+    left: 137;
+}
+
+.keyboardWrap {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
