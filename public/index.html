@@ -2,18 +2,31 @@
   <head>
     <title>SynthJS</title>
     <link href="css/style1.css" type="text/css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-
+    <link rel="stylesheet" href="css/piano_style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/piano.js"></script>
+    <script type="text/javascript">
+      $( document ).ready(function() {
+          //create piano with 3 octaves, starting at C4 (lowest key)
+          //shows labels and octave shift buttons
+          var keyboardHTML = htmlForKeyboardWithOctaves(3, octaves.C4, true, true, false, false)
+          //render the keyboard in the div
+          $("#keyboardContainer").html(keyboardHTML)
+          //when keys are pressed updatePreview() is called6
+          bindKeysToFunction(function() {
+	      console.log(note)
+	  })
+          //set the default clef to G4
+          setSelectedClef(clefs.G4)
+      })
+    </script>
   </head>
   <body>
     <h1> SynthJS </h1>
     <div class = "osc">
     </div>
-
     <keyboardWrap>
-    <div>
-      <img src="image/InstrumentalKeyboard.png" alt="keyboard">
-    </div>
+    <div id="keyboardContainer"></div>
     </keyboardWrap>
   </body>
 </html>
