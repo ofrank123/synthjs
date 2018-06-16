@@ -32,6 +32,6 @@ h1 {
     left: 137;
 }
 
-.keyboardWrap {
-    margin: 0 auto;
+keyboardWrap {
+    text-align: center;
 }
