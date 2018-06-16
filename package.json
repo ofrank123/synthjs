@@ -1,0 +1,24 @@
+{
+  "name": "synthjs",
+  "version": "1.0.0",
+  "description": "An audio synthesis web app",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.16.3",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ofrank123/synthjs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ofrank123/synthjs/issues"
+  },
+  "homepage": "https://github.com/ofrank123/synthjs#readme"
+}
