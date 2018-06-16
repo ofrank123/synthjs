@@ -1,8 +1,12 @@
-var http = require('http');
+var express = require('express')
+var app = express()
 
+var express = require('express');
+//var server = express.createServer();
+// express.createServer()  is deprecated. 
+var server = express(); // better instead
+server.configure(function(){
+  server.use(express.static(__dirname + '/public'));
+});
 
-//create a server object:
-http.createServer(function (req, res) {
-  res.write('Hello World!'); //write a response to the client
-  res.end(); //end the response
-}).listen(9000); //the server object listens on port 8080
+server.listen(9000);

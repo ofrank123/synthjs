@@ -1,1 +1,4 @@
 .ssh/*
+.nvm/*
+.npm/*
+node_modules/*
