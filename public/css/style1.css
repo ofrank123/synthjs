@@ -2,22 +2,34 @@ body {
     background-color: #D3D3D3;
 }
 
-*{
+* {
     font-family: 'Oswald', sans-serif;
   }
 
-h1{
+h1 {
     font-family: 'Oswald', sans-serif;
     font-size: 64px;
     color: white;
     text-align: center;
 }
 
-.osc{
+.osc {
     background-color: green;
     margin-left: 100;
     margin-right: 100;
     margin-top: 150;
     margin-bottom: 150;
     height: 100;
+}
+
+.container {
+  position: relative;
+  display: inline;
+}
+
+.overlay {
+  position: fixed;
+  top: 290;
+  left: 137;
+  transform: rotate(50deg);
 }
