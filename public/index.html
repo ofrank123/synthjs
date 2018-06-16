@@ -14,8 +14,11 @@
           //render the keyboard in the div
           $("#keyboardContainer").html(keyboardHTML)
           //when keys are pressed updatePreview() is called6
-          bindKeysToFunction(function() {
+          bindKeyDownToFunction(function() {
 	      playNote(note)
+	  })
+	  bindKeyUpToFunction(function() {
+	      stopNote(note)
 	  })
           //set the default clef to G4
           setSelectedClef(clefs.G4)

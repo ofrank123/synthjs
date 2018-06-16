@@ -107,11 +107,19 @@ keys = {
 }
 
 function playNote(note){
-  console.log(keys[note]);
-   osc1.frequency.value = keys[note];
-   osc1.start();
+    console.log(keys[note]);
+    osc1.frequency.value = keys[note];
+    osc1.start();
+    lfo.start();
 }
+
+function stopNote(note){
+    console.log(keys[note]);
+    osc1.frequency.value = keys[note];
+    osc1.stop();
+    lfo.stop();
+}
+
 
 playNote("45");
 //osc1.start();
-lfo.start();

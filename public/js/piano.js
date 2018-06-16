@@ -160,9 +160,8 @@ function bindClefSelectionToFunction(callback) {
     
 }
 
-function bindKeysToFunction(callback) {
-
-    $(".DA-PianoKeyboard li").click(function () {
+function bindKeyDownToFunction(callback) {
+    $(".DA-PianoKeyboard li").mousedown(function () {
         var indexOfKey = $(this).index()
 
         var noteDuration = 4;
@@ -174,7 +173,21 @@ function bindKeysToFunction(callback) {
         var note = codeForKeyAtIndex(indexOfKey, _startOctave, noteDuration)
         callback(this, note)
     })
+}
 
+function bindKeyUpToFunction(callback) {
+    $(".DA-PianoKeyboard li").mouseup(function () {
+        var indexOfKey = $(this).index()
+
+        var noteDuration = 4;
+        var selectedRadioBox = $("#DA-NoteSelection input[type='radio']:checked")
+        if (selectedRadioBox.length > 0) {
+            noteDuration = selectedRadioBox.val();
+        }
+
+        var note = codeForKeyAtIndex(indexOfKey, _startOctave, noteDuration)
+        callback(this, note)
+    })
 }
 
 function raiseOctave() {
