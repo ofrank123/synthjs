@@ -3,4 +3,4 @@ var app = express()
 
 app.use('/', express.static('public'));
 
-server.listen(9000);
+app.listen(9000);
