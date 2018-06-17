@@ -95,7 +95,7 @@ function getNote(note){
 
 function startOsc(note) {
     osc1 = audioCtx.createOscillator();
-    osc1.type = 'sine';
+    osc1.type = 'sawtooth';
     osc1.frequency.value = getNote(note);
 
     gain1 = audioCtx.createGain();

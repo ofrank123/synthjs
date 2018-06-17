@@ -134,9 +134,4 @@ $(document).keyup(function(event){
 	    j = undefined
 	}
     }
-
-
-
-
-
 })
