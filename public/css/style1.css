@@ -9,7 +9,28 @@ ul {
     background-color: gray;
 }
 
+<<<<<<< HEAD
 li {
+=======
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 64px;
+    color: black;
+    text-align: center;
+}
+
+.osc {
+    background-color: green;
+    margin-left: 100;
+    margin-right: 100;
+    margin-top: 150;
+    margin-bottom: 50;
+    height: 100;
+}
+
+.container {
+    position: relative;
+>>>>>>> 8bc42f41a5f1cd656cc5e2d71d5db4cf4da05f87
     display: inline;
 }
 
