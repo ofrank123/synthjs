@@ -13,16 +13,43 @@
           var keyboardHTML = htmlForKeyboardWithOctaves(3, octaves.C4, true, true, false, false)
           //render the keyboard in the div
           $("#keyboardContainer").html(keyboardHTML)
-          //when keys are pressed updatePreview() is called6
-          bindKeyDownToFunction(function() {
-	      playNote(note)
+	  var mouseOscList = [];
+	  
+	  //when keys are pressed updatePreview() is called6
+	  bindKeyDownToFunction(function() {
+	      mouseOscList.push(startOsc(note))
+	      console.log(mouseOscList)
 	  })
+	  
 	  bindKeyUpToFunction(function() {
-	      stopNote(note)
+	      mouseOscList.forEach(function(item, index, array) {
+		  stopOsc(item)
+		  mouseOscList.splice(index, 1)
+	      })
 	  })
           //set the default clef to G4
           setSelectedClef(clefs.G4)
       })
+
+      function startOsc(note) {
+	  osc1 = audioCtx.createOscillator();
+	  osc1.type = 'sine';
+	  osc1.frequency.value = getNote(note);
+
+	  gain1 = audioCtx.createGain();
+	  gain1.gain.value = 1;
+
+	  osc1.connect(gain1);
+	  gain1.connect(audioCtx.destination);
+
+	  osc1.start();
+	  var oscO = {osc: osc1, gain: gain1};
+	  return oscO
+      }
+
+      function stopOsc(oscO) {
+	  oscO.gain.gain.setTargetAtTime(0, audioCtx.currentTime, 0.015);
+      }
     </script>
   </head>
   <body>
