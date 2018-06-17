@@ -97,11 +97,19 @@ function startOsc1(note) {
     osc1 = audioCtx.createOscillator();
     
     osc1.type = $('input[name=wave1]:checked').val();
-
+    
     var coarseAdd = $('#coarseKnob1').val();
-    var noteFreq = parseInt(note) + parseInt(coarseAdd)
+    var octave = $('#octave1').val();
+    console.log(octave);
+    var noteFreq = parseInt(note) + parseInt(coarseAdd) + (parseInt(octave) * 12)
+    if(noteFreq > 83) {
+	noteFreq = 83
+    }
+    if(noteFreq < 0) {
+	noteFreq = 0
+    }
     osc1.frequency.value = getNote(noteFreq);
-
+    
     gain1 = audioCtx.createGain();
     gain1.gain.value = ($("#gainKnob1").val()) / 100;
     
@@ -118,7 +126,14 @@ function startOsc2(note) {
     osc2.type = $('input[name=wave2]:checked').val();
 
     var coarseAdd = $('#coarseKnob2').val();
-    var noteFreq = parseInt(note) + parseInt(coarseAdd)
+    var octave = $('#octave2').val();
+    var noteFreq = parseInt(note) + parseInt(coarseAdd) + (parseInt(octave) * 12)
+    if(noteFreq > 83) {
+	noteFreq = 83
+    }
+    if(noteFreq < 0) {
+	noteFreq = 0
+    }
     osc2.frequency.value = getNote(noteFreq);
     
     gain2 = audioCtx.createGain();
@@ -137,7 +152,14 @@ function startOsc3(note) {
     osc3.type = $('input[name=wave3]:checked').val();
 
     var coarseAdd = $('#coarseKnob3').val();
-    var noteFreq = parseInt(note) + parseInt(coarseAdd)
+    var octave = $('#octave1').val();
+    var noteFreq = parseInt(note) + parseInt(coarseAdd) + (parseInt(octave) * 12)
+    if(noteFreq > 83) {
+	noteFreq = 83
+    }
+    if(noteFreq < 0) {
+	noteFreq = 0
+    }
     osc3.frequency.value = getNote(noteFreq);
 
     
