@@ -108,7 +108,12 @@ function startOsc1(note) {
     if(noteFreq < 0) {
 	noteFreq = 0
     }
-    osc1.frequency.value = getNote(noteFreq);
+    var fineAdd = parseInt($('#fineKnob1').val());
+    var ft = getNote(noteFreq) - getNote(noteFreq-1);
+    var fa = ft * (fineAdd / 100)
+    var frequency = getNote(noteFreq) + fa;
+
+    osc1.frequency.value = frequency;
     
     gain1 = audioCtx.createGain();
     gain1.gain.value = ($("#gainKnob1").val()) / 100;
@@ -134,7 +139,12 @@ function startOsc2(note) {
     if(noteFreq < 0) {
 	noteFreq = 0
     }
-    osc2.frequency.value = getNote(noteFreq);
+    var fineAdd = parseInt($('#fineKnob2').val());
+    var ft = getNote(noteFreq) - getNote(noteFreq-1);
+    var fa = ft * (fineAdd / 100)
+    var frequency = getNote(noteFreq) + fa;
+
+    osc2.frequency.value = frequency;
     
     gain2 = audioCtx.createGain();
     gain2.gain.value = ($("#gainKnob2").val()) / 100;
@@ -160,7 +170,12 @@ function startOsc3(note) {
     if(noteFreq < 0) {
 	noteFreq = 0
     }
-    osc3.frequency.value = getNote(noteFreq);
+    var fineAdd = parseInt($('#fineKnob3').val());
+    var ft = getNote(noteFreq) - getNote(noteFreq-1);
+    var fa = ft * (fineAdd / 100)
+    var frequency = getNote(noteFreq) + fa;
+
+    osc3.frequency.value = frequency;
 
     
     gain3 = audioCtx.createGain();
