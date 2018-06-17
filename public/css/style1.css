@@ -7,6 +7,9 @@ ul {
     margin: 0;
     padding: 0;
     background-color: gray;
+    text-align: center;
+
+
 }
 
 li {
@@ -15,4 +18,12 @@ li {
 
 .knobEl {
     margin: 10px 10px 10px 10px;
+}
+@font-face {
+  font-family: Rakkas;
+  src: url("https://fonts.google.com/specimen/Rakkas");
+}
+h1 {
+  font-family: "Rakkas";
+  text-align: center;
 }
