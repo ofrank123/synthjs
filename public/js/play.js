@@ -95,12 +95,12 @@ function getNote(note){
 
 function startOsc(note) {
     osc1 = audioCtx.createOscillator();
-    osc1.type = $('input[name=name_of_your_radiobutton]:checked').val();
+    osc1.type = $('input[name=wave]:checked').val();
     osc1.frequency.value = getNote(note);
 
     gain1 = audioCtx.createGain();
     gain1.gain.value = ($("#gainKnob1").val()) / 100;
-
+    
     osc1.connect(gain1);
     gain1.connect(audioCtx.destination);
 

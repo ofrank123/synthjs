@@ -39,17 +39,16 @@
   </head>
   <body>
     <h1> SynthJS </h1>
-    <div class = "osc">
-	<input id="gainKnob1" class="dial" width="90" data-width="90" data-angleOffset=-125 data-angleArc=250 value="35">
-      <form action="">
-	<input type="radio" name="wave" value="sine">Sine<br>
-	<input type="radio" name="wave" value="sawtooth">Saw<br>
-	<input type="radio" name="wave" value="square">Square<br>
-	<input type="radio" name="wave" value="triangle">Triangle<br>
-      </form>
-    </div>
-    <keyboardWrap>
+    <ul>
+      <h2 style="margin-left: 20px;"> Osc1 </h2>
+      <li class="knobEl"><input id="gainKnob1" class="dial" data-width="90" data-height="90" data-angleOffset=-125 data-angleArc=250 value="35"></li>
+      <li><input type="radio" name="wave" value="sine" checked="checked">Sine</li>
+      <li><input type="radio" name="wave" value="sawtooth">Saw</li>
+      <li><input type="radio" name="wave" value="square">Square</li>
+      <li><input type="radio" name="wave" value="triangle">Triangle</li>
+    </ul>
     <div id="keyboardContainer"></div>
-    </keyboardWrap>
   </body>
 </html>
+
+<!---!>
