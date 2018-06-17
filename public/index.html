@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>SynthJS</title>
+	  <center> <p> Loudness </p> </center>
     <link href="css/style1.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="css/piano_style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -16,7 +17,6 @@
           //render the keyboard in the div
           $("#keyboardContainer").html(keyboardHTML)
 	  var mouseOscList = [];
-	  <p> Loudness </p>
 	  //when keys are pressed updatePreview() is called6
 	  bindKeyDownToFunction(function() {
 	      mouseOscList.push(startOsc(note))
