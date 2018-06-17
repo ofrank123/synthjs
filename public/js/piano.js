@@ -43,6 +43,10 @@ function numberOfDisplayedOctaves() {
     return _displayedOctaves
 }
 
+function getBaseOctave() {
+    return _startOctave
+}
+
 function codeForKeyAtIndex(keyIndex, baseOctave, duration) {
     note = (baseOctave * 12) + keyIndex;
     
