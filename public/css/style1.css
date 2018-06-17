@@ -1,5 +1,6 @@
 body {
-    background-color: #c9c9c9;
+    /*background-color: #c9c9c9; */
+    background-color: #cbcbdb;
 }
 
 ul {
@@ -10,8 +11,6 @@ ul {
     text-align: center;
     margin-left: 10%;
     margin-right: 10%;
-
-
 }
 
 li {
@@ -21,15 +20,20 @@ li {
 .knobEl {
     margin: 10px 10px 10px 10px;
 }
-@font-face {
-  font-family: Rakkas;
-  src: url("https://fonts.google.com/specimen/Rakkas");
-}
+
 h1 {
-  font-family: "Rakkas";
+  font-family: 'Teko', sans-serif;
   text-align: center;
+font-size: 50px;
+  color: #000079;
+  margin-bottom: -30px;
 }
 body {
 font-size: 20px;
 color: white;
+}
+
+h2{
+/*  color: 	#B8B8B8		; */
+color: #D0D0D0;
 }
