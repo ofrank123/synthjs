@@ -93,9 +93,10 @@ function getNote(note){
 }
 
 
-function startOsc(note) {
+function startOsc1(note) {
     osc1 = audioCtx.createOscillator();
-    osc1.type = $('input[name=wave]:checked').val();
+    
+    osc1.type = $('input[name=wave1]:checked').val();
     osc1.frequency.value = getNote(note);
 
     gain1 = audioCtx.createGain();
@@ -109,7 +110,40 @@ function startOsc(note) {
     return oscO
 }
 
+function startOsc2(note) {
+    osc2 = audioCtx.createOscillator();
+    osc2.type = $('input[name=wave2]:checked').val();
+    osc2.frequency.value = getNote(note);
+
+    gain2 = audioCtx.createGain();
+    gain2.gain.value = ($("#gainKnob2").val()) / 100;
+    
+    osc2.connect(gain2);
+    gain2.connect(audioCtx.destination);
+
+    osc2.start();
+    var oscO = {osc: osc2, gain: gain2};
+    return oscO
+}
+
+function startOsc3(note) {
+    osc3 = audioCtx.createOscillator();
+    osc3.type = $('input[name=wave3]:checked').val();
+    osc3.frequency.value = getNote(note);
+
+    gain3 = audioCtx.createGain();
+    gain3.gain.value = ($("#gainKnob3").val()) / 100;
+    
+    osc3.connect(gain3);
+    gain3.connect(audioCtx.destination);
+
+    osc3.start();
+    var oscO = {osc: osc3, gain: gain3};
+    return oscO
+}
+
 function stopOsc(oscO) {
-    oscO.gain.gain.setTargetAtTime(0, audioCtx.currentTime, 0.015);
+    if(typeof oscO !== 'undefined')
+	oscO.gain.gain.setTargetAtTime(0, audioCtx.currentTime, 0.015);
 }
 

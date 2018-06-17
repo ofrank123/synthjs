@@ -15,18 +15,21 @@
           var keyboardHTML = htmlForKeyboardWithOctaves(3, octaves.C4, true, true, false, false)
           //render the keyboard in the div
           $("#keyboardContainer").html(keyboardHTML)
-	  var mouseOscList = [];
+	  var osc1;
+	  var osc2;
+	  var osc3;
+	  
 	  //when keys are pressed updatePreview() is called6
 	  bindKeyDownToFunction(function() {
-	      mouseOscList.push(startOsc(note))
-	      console.log(mouseOscList)
+	      osc1 = startOsc1(note)
+	      osc2 = startOsc2(note)
+	      osc3 = startOsc3(note)
 	  })
 	  
 	  bindKeyUpToFunction(function() {
-	      mouseOscList.forEach(function(item, index, array) {
-		  stopOsc(item)
-		  mouseOscList.splice(index, 1)
-	      })
+	      stopOsc(osc1)
+	      stopOsc(osc2)
+	      stopOsc(osc3)
 	  })
       })
 
@@ -40,11 +43,27 @@
     <h1> SynthJS </h1>
     <ul>
       <h2 style="margin-left: 20px;"> Osc1 </h2>
-      <li class="knobEl"><input id="gainKnob1" class="dial" data-width="90" data-height="90" data-angleOffset=-125 data-angleArc=250 value="35"></li>
-      <li><input type="radio" name="wave" value="sine" checked="checked">Sine</li>
-      <li><input type="radio" name="wave" value="sawtooth">Saw</li>
-      <li><input type="radio" name="wave" value="square">Square</li>
-      <li><input type="radio" name="wave" value="triangle">Triangle</li>
+      <li class="knobEl"><input id="gainKnob1" class="dial" data-width="90" data-height="90" data-angleOffset=-125 data-angleArc=250 value="50"></li>
+      <li><input type="radio" name="wave1" value="sine" checked="checked">Sine</li>
+      <li><input type="radio" name="wave1" value="sawtooth">Saw</li>
+      <li><input type="radio" name="wave1" value="square">Square</li>
+      <li><input type="radio" name="wave1" value="triangle">Triangle</li>
+    </ul>
+    <ul>
+      <h2 style="margin-left: 20px;"> Osc2 </h2>
+      <li class="knobEl"><input id="gainKnob2" class="dial" data-width="90" data-height="90" data-angleOffset=-125 data-angleArc=250 value="0"></li>
+      <li><input type="radio" name="wave2" value="sine" checked="checked">Sine</li>
+      <li><input type="radio" name="wave2" value="sawtooth">Saw</li>
+      <li><input type="radio" name="wave2" value="square">Square</li>
+      <li><input type="radio" name="wave2" value="triangle">Triangle</li>
+    </ul>
+    <ul>
+      <h2 style="margin-left: 20px;"> Osc3 </h2>
+      <li class="knobEl"><input id="gainKnob3" class="dial" data-width="90" data-height="90" data-angleOffset=-125 data-angleArc=250 value="0"></li>
+      <li><input type="radio" name="wave3" value="sine" checked="checked">Sine</li>
+      <li><input type="radio" name="wave3" value="sawtooth">Saw</li>
+      <li><input type="radio" name="wave3" value="square">Square</li>
+      <li><input type="radio" name="wave3" value="triangle">Triangle</li>
     </ul>
     <div id="keyboardContainer"></div>
   </body>
