@@ -1,7 +1,5 @@
 var audioCtx = new AudioContext();
 
-var osc1 = audioCtx.createOscillator();
-
 var keys = [];
 keys = {
     0  : 32.703, //C1
@@ -93,3 +91,25 @@ keys = {
 function getNote(note){
     return keys[note]
 }
+
+
+function startOsc(note) {
+    osc1 = audioCtx.createOscillator();
+    osc1.type = 'sine';
+    osc1.frequency.value = getNote(note);
+
+    gain1 = audioCtx.createGain();
+    gain1.gain.value = 1;
+
+    osc1.connect(gain1);
+    gain1.connect(audioCtx.destination);
+
+    osc1.start();
+    var oscO = {osc: osc1, gain: gain1};
+    return oscO
+}
+
+function stopOsc(oscO) {
+    oscO.gain.gain.setTargetAtTime(0, audioCtx.currentTime, 0.015);
+}
+

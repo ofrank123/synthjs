@@ -6,6 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="js/piano.js"></script>
     <script src="js/play.js"></script>
+    <script src="js/keyboard.js"></script>
     <script type="text/javascript">
       $( document ).ready(function() {
           //create piano with 3 octaves, starting at C4 (lowest key)
@@ -28,29 +29,9 @@
 	      })
 	  })
 	  
-          //set the default clef to G4
-          setSelectedClef(clefs.G4)
       })
 
-      function startOsc(note) {
-	  osc1 = audioCtx.createOscillator();
-	  osc1.type = 'sine';
-	  osc1.frequency.value = getNote(note);
 
-	  gain1 = audioCtx.createGain();
-	  gain1.gain.value = 1;
-
-	  osc1.connect(gain1);
-	  gain1.connect(audioCtx.destination);
-
-	  osc1.start();
-	  var oscO = {osc: osc1, gain: gain1};
-	  return oscO
-      }
-
-      function stopOsc(oscO) {
-	  oscO.gain.gain.setTargetAtTime(0, audioCtx.currentTime, 0.015);
-      }
     </script>
   </head>
   <body>
